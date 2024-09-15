@@ -1,5 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app, db } from "../firebase_init.js";
+import { doc, getDoc } from "firebase/firestore";
 let auth = getAuth(app);
 
 let events = [];
@@ -11,8 +12,7 @@ if (user) {
 
     events = docSnap.data().events
 
-    let orgName = docSnap.data().orgName
-
+    let orgName = docSnap.data().orgName;
     document.getElementById('name').innerHTML = `${orgName}`;
 } else {
     window.location.replace("../");

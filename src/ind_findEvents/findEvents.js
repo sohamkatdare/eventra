@@ -6,7 +6,9 @@ const auth = getAuth(app);
 
 const dateSort = document.getElementById("date-filter")
 
-const locationFilter = document.getElementById("location-filter")
+let locationFilter = "";
+
+console.log(locationFilter.value)
 
 const eventsList = document.getElementById("events-list")
 
@@ -75,7 +77,6 @@ async function getQuerySnapshot(query) {
 }
 
 let qS = await getQuerySnapshot(q)
-
 console.log(qS)
 
 qS.forEach((docItem) => {
@@ -98,6 +99,8 @@ qS.forEach((docItem) => {
     }
     
 });
+
+
 
 
 
