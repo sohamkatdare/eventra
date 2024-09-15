@@ -1,3 +1,6 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import {db} from '../firebase_init'
 
 // Get the modal and button elements
 const modal = document.getElementById("myModal");
@@ -19,4 +22,22 @@ window.addEventListener("click", function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+});
+
+
+
+const auth = getAuth();
+console.log(auth);
+
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    const uid = user.uid;
+    let docSnap = await getDoc(doc(db, 'users', uid));
+
+    let orgName = docSnap.data().orgName
+  } else {
+    window.location.replace("../");
+  }
+
+  document.getElementById('name').innerHTML = `${orgName}`
 });

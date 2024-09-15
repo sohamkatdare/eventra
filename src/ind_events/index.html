@@ -18,11 +18,10 @@
 
         <div class="ml-auto flex items-center space-x-2">
           <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-            <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">              
-              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
+          <span id = "name" class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
         </div>
         
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -71,8 +70,9 @@
     </aside>
 
     <!-- Main Content for Favorited Events -->
-    <div class="main-content ml-64 mt-16 p-8">
-      <h1 class="text-2xl font-semibold mb-6 text-black">Your Favorited Events</h1>
+    <div class="main-content flex-1 ml-64 mt-16 p-8">
+      
+      <h1 class="text-2xl font-semibold mb-6 text-black -translate-y-full -mt-24">Your Favorited Events</h1>
 
       <!-- Placeholder when no events are favorited -->
       <div id="no-favorites" class="bg-gray-100 text-black p-4 rounded-md hidden">
@@ -86,12 +86,13 @@
     </div>
 
     <!-- JavaScript Section for Handling Favorited Events -->
+     <scrpt type="module" src="index.js"></scrpt>
     <script>
       // Fake favorite events data - CHANGE LATER
       const favoritedEvents = [
-        { name: "Music Festival", description: "Enjoy live performances from various artists.", date: "2024-10-15", location: "Downtown Park" },
-        { name: "Tech Conference", description: "Meet industry leaders and explore new technologies.", date: "2024-11-03", location: "Tech Center" },
-        { name: "Art Expo", description: "Explore art from various creators.", date: "2024-09-30", location: "Art Gallery" }
+        { name: "Music Festival", description: "Enjoy live performances from various artists. This includes performances by popular artists like Taylor Swift, Drake, Kendrick Lamar, and more. Ticket funding goes to cancer research.", date: "10/15/2024", location: "Downtown Park" },
+        { name: "Tech Conference", description: "Meet industry leaders and explore new technologies.", date: "11/03/2024", location: "Tech Center" },
+        { name: "Art Expo", description: "Explore art from various creators.", date: "9/30/2024", location: "Art Gallery" }
       ];
 
       function displayFavoritedEvents(events) {

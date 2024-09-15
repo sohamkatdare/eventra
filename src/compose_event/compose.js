@@ -1,14 +1,19 @@
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase_init.js";
+import { addDoc, collection, getDoc, doc } from "firebase/firestore";
+import { app, db } from "../firebase_init.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-console.log('hello')
 
 document.getElementById("submit-button").onclick = async (event) => {
     event.preventDefault();
 
-    console.log("hello")
-    
-    try {
+    let auth = getAuth(app);
+
+    onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const uid = user.uid;
+        let docSnap = await getDoc(doc(db, 'users', uid));
+
+        console.log("hello")
         let docRef = await addDoc(collection(db, "events"), {
             title: document.getElementById("title").value,
             city: document.getElementById("city").value,
@@ -19,8 +24,13 @@ document.getElementById("submit-button").onclick = async (event) => {
             announcements: [],
             favCount: 0
         });
+
+        docSnap.data().events.push(docRef.id)
+        
         window.location.replace("/org_home/");
-    } catch(e) {
-        console.error("Document add threw error:", e);
+    } else {
+        window.location.replace("../");
     }
+});
+
 };

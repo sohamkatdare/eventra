@@ -36,7 +36,7 @@
               <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
+          <span id = "name" class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
         </div>
         
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -109,18 +109,21 @@
         <!-- Scrollable Events Container -->
         <div id="events-list" class="h-screen overflow-y-scroll space-y-4">
           <!-- Example events - CHANGE LATER -->
-          <div id="sample-event" class="bg-white hidden shadow p-4 rounded-md flex justify-between items-center" data-location="Downtown Park" data-date="2024-10-15">
-            <div>
-              <h2 class="text-xl font-semibold text-black">Music Festival</h2>
-              <p class="text-black">Date: 2024-10-15</p>
-              <p class="text-black">Location: Downtown Park</p>
-              <p class="text-black mt-2">Enjoy live performances from various artists.</p>
+          <div id="sample-event" class=""> 
+            <div class="bg-white shadow p-4 rounded-md flex justify-between items-center" data-location="Downtown Park" data-date="2024-10-15">
+              <div>
+                <h2 class="text-xl font-semibold text-black">Music Festival</h2>
+                <p class="text-black">Date: 2024-10-15</p>
+                <p class="text-black">Location: Downtown Park</p>
+                <p class="text-black mt-2">Enjoy live performances from various artists. This includes performances by popular artists like Taylor Swift, Drake, Kendrick Lamar, and more. Ticket funding goes to cancer research.</p>
+              </div>
+              
+              <button class="text-yellow-500 rsvp-button">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 17.75l-6.18 3.7 1.18-7.02L2 9.24l7.09-1.03L12 2.5l2.91 5.71L22 9.24l-5 4.89 1.18 7.02L12 17.75z" />
+                </svg>
+              </button>
             </div>
-            <button class="text-yellow-500">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 17.75l-6.18 3.7 1.18-7.02L2 9.24l7.09-1.03L12 2.5l2.91 5.71L22 9.24l-5 4.89 1.18 7.02L12 17.75z" />
-              </svg>
-            </button>
           </div>
 
           <div class="bg-white shadow p-4 rounded-md flex justify-between items-center" data-location="Tech Center" data-date="2024-11-03">

@@ -22,7 +22,7 @@
               <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
+          <span id = "name" class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
         </div>
         
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -72,23 +72,22 @@
       </aside>
     </div>
 
-    <div class="grid gap-5 grid-cols-12 h-[100%] w-[100%] ml-64">
-        <div class="grid h-[30vh] col-start-1 col-end-13 bg-gray-900 text-white place-content-center w-full">
-          <p class="text-4xl">Welcome, [user-name].</p>
-        </div>
-  
-        <div class="grid row-start-2 col-start-2 col-end-7 bg-gray-900 text-white place-content-center w-full h-[20vh] p-10 rounded-lg">
-          <p class="text-2xl">Account Profile</p>
-        </div>
-        <div class="grid row-start-2 col-start-7 col-end-12 bg-gray-900 text-white place-content-center w-full p-10 rounded-lg">
-          <p class="text-2xl">Your Events</p>
-        </div>
-        <div class="grid row-start-3 col-start-5 col-end-9 bg-gray-900 text-white place-content-center w-full h-[20vh] p-10 rounded-lg">
-          <p class="text-2xl">Find Events</p>
-        </div>
-    </div>
+    <div class="grid gap-5 px-5 grid-cols-12 h-[100%] w-[100%] ml-64">
+      <div class="grid h-[30vh] col-start-1 col-end-13 text-gray-700 place-content-center w-full">
+        <p class="text-4xl">Welcome, [First Name] + [Last Name].</p>
+      </div>
 
-    <script src="../main.js"></script>
+      <div class="grid row-start-2 col-start-3 col-end-7 bg-gray-700 text-white place-content-center w-full h-[20vh] rounded-xl">
+        <a href = "../ind_findEvents/"><p class="text-2xl" style = "color:rgb(161, 255, 253);">Find Events</p></a>
+      </div>
+      <div class="grid row-start-2 col-start-7 col-end-11 bg-gray-700 text-white place-content-center w-full rounded-xl">
+        <a href = "../ind_Events/"><p class="text-2xl" style = "color:rgb(161, 255, 253)">Your Events</p></a>
+      </div>
+    </div>
+    <script src="../ main.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+    <script type="module" src="index.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

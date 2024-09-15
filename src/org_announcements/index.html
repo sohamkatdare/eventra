@@ -12,18 +12,19 @@
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background-color: #b6210a; 
+        background-color: #00aaff; 
         color: white;
         border: none;
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
-        font-size: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         z-index: 1000; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
       }
 
       /* Style for the modal */
@@ -87,7 +88,7 @@
               <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-sm font-medium text-gray-900 dark:text-white">My Awesome Org</span> 
+          <span id = "name" class="text-sm font-medium text-gray-900 dark:text-white">My Awesome Org</span> 
         </div>
         
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -153,7 +154,7 @@
     </div>
     <!-- Main Content -->
     <div class="ml-64 w-[calc(100%-256px)] h-screen p-4 mt-16 mx-auto">
-      <h1 class="text-2xl font-bold text-black">Announcements</h1>
+      <h1 class="text-2xl font-bold text-black mt-8 ml-5">Announcements</h1>
 
       <div class="grid grid-cols-3 gap-4 mt-4">
         <div class="bg-gray-200 p-4 rounded-lg text-black">A #1</div>
@@ -163,7 +164,12 @@
     </div>
 
     <!-- Floating Plus Button -->
-    <button class="floating-btn" id="openModalBtn">+</button>
+    <button class="rounded-full h-20 w-20 bg-sky-400 hover:bg-sky-600 transition ease-in-out grid place-content-center fixed bottom-10 right-10 drop-shadow-lg" id="openModalBtn">
+      <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 12h14m-7 7V5"/>
+      </svg>
+    </button>
+
 
     <!-- Modal Structure -->
     <div id="myModal" class="modal">
