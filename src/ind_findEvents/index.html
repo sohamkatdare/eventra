@@ -21,14 +21,24 @@
       
       </style>
   </head>
-  <body class="bg-white">
+  <body class="bg-gradient-to-br from-green-300 via-red-200 to-purple-300">
     
     <nav class="bg-gray-50 outline outline-gray-100 h-16 z-50 border-gray-200 dark:bg-gray-900 w-screen fixed top-0">
       <div class="max-w-screen flex flex-wrap  items-center justify-between p-4">
-        <a href="https://flowbite.com/" class="flex space-x-3 rtl:space-x-reverse">
+        <a href="../" class="flex space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Eventra (User View)</span>
         </a>
+
+        <div class="ml-auto flex items-center space-x-2">
+          <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+            <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">              
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-gray-900 dark:text-white">Bob Ross</span> 
+        </div>
+        
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -36,14 +46,6 @@
             </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Log In</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent pr-10">Sign Up</a>
-            </li>
-          </ul>
         </div>
         
       </div>
@@ -60,14 +62,6 @@
                     <path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/>
                   </svg>
                   <span class="ms-3">Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="../ind_account/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
-                  </svg>                  
-                  <span class="ms-3">Account</span>
                 </a>
               </li>
               <li>
@@ -92,26 +86,74 @@
       </aside>
     </div>
 
-    <div class="h-screen w-screen ml-64">
-      <form>
-          <div class="top-0 left-0 mt-40 ml-20">
-              <input type="text" id="findEvents" class="w-[80%] bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for Events"/>
-              <button type="Submit" class="button1 mt-5">Submit              
-              </button> 
+    <div class="w-screen">
+      <main class="flex-1 p-8 ml-64 mt-16">
+        <h1 class="text-2xl font-semibold mb-6 text-black">All Charity Events</h1>
+
+        <!-- Filter Section -->
+        <div class="mb-6 space-y-4">
+          <div>
+            <label for="location-filter" class="block mb-2 text-sm font-medium text-gray-900">Filter by Location</label>
+            <input type="text" id="location-filter" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5" placeholder="Enter location">
           </div>
-      </form>
-      <div class="w-[100%] h-screen mt-16 p-10">
-        
-        <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-          <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="" alt="">
-          <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Event #1</h5>
-              <span><img class="h-5 inline w-5 rounded-full mr-2" src="user_icon">Hosted by <span class="font-bold">Name</span></span>
-              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">This is a sample event. Lorem ipsum dolor sit amet.  </p>
+          <div>
+            <label for="date-filter" class="block mb-2 text-sm font-medium text-gray-900">Sort by Date</label>
+            <select id="date-filter" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5">
+              <option value="earliest">Earliest to Latest</option>
+              <option value="latest">Latest to Earliest</option>
+            </select>
           </div>
-        </a>
-        
-      </div>
+          <button id="apply-filters" class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">Apply Filters</button>
+        </div>
+
+        <!-- Scrollable Events Container -->
+        <div id="events-list" class="h-screen overflow-y-scroll space-y-4">
+          <!-- Example events - CHANGE LATER -->
+          <div id="sample-event" class="bg-white hidden shadow p-4 rounded-md flex justify-between items-center" data-location="Downtown Park" data-date="2024-10-15">
+            <div>
+              <h2 class="text-xl font-semibold text-black">Music Festival</h2>
+              <p class="text-black">Date: 2024-10-15</p>
+              <p class="text-black">Location: Downtown Park</p>
+              <p class="text-black mt-2">Enjoy live performances from various artists.</p>
+            </div>
+            <button class="text-yellow-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.75l-6.18 3.7 1.18-7.02L2 9.24l7.09-1.03L12 2.5l2.91 5.71L22 9.24l-5 4.89 1.18 7.02L12 17.75z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="bg-white shadow p-4 rounded-md flex justify-between items-center" data-location="Tech Center" data-date="2024-11-03">
+            <div>
+              <h2 class="text-xl font-semibold text-black">Tech Conference</h2>
+              <p class="text-black">Date: 2024-11-03</p>
+              <p class="text-black">Location: Tech Center</p>
+              <p class="text-black mt-2">Meet industry leaders and explore new technologies.</p>
+            </div>
+            <button class="text-yellow-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.75l-6.18 3.7 1.18-7.02L2 9.24l7.09-1.03L12 2.5l2.91 5.71L22 9.24l-5 4.89 1.18 7.02L12 17.75z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="bg-white shadow p-4 rounded-md flex justify-between items-center" data-location="Art Gallery" data-date="2024-09-30">
+            <div>
+              <h2 class="text-xl font-semibold text-black">Art Expo</h2>
+              <p class="text-black">Date: 2024-09-30</p>
+              <p class="text-black">Location: Art Gallery</p>
+              <p class="text-black mt-2">Explore art from various creators.</p>
+            </div>
+            <button class="text-yellow-500">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.75l-6.18 3.7 1.18-7.02L2 9.24l7.09-1.03L12 2.5l2.91 5.71L22 9.24l-5 4.89 1.18 7.02L12 17.75z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Add more event items here -->
+        </div>
+      </main>
 
     </div>
   </div>
@@ -119,6 +161,7 @@
     
 
     <script src="../main.js"></script>
+    <script type="module" src="findEvents.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

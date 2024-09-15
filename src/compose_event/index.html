@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eventra</title>
-    <link rel="icon" type="image/png" href="/eventra_logo.png/" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
   <body class="bg-white">
 
@@ -13,7 +13,7 @@
         <nav class="bg-gray-50 outline outline-gray-100 h-16 z-50 border-gray-200 dark:bg-gray-900 w-screen fixed top-0">
         <div class="max-w-screen flex flex-wrap  items-center justify-between p-4">
             <a href="../" class="flex space-x-3 rtl:space-x-reverse">
-                <img src="/eventra_logo.png/" class="h-8" alt="Flowbite Logo" />
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Eventra (Organization View)</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -38,7 +38,7 @@
         <div class="p-10">
             <h2 class="text-4xl font-semibold mb-4 text-black">Add Event</h2>
 
-            <form class="text-black" id="compose-form">
+            <form class="text-black" id="compose-form" action="#">
                 <div class="mb-4">
                 <label for="title" class="block text-gray-700">Title</label>
                 <input type="text" id="title" name="title" class="w-1/2 inline px-3 py-2 border rounded-lg" placeholder="Enter title" />
@@ -55,7 +55,7 @@
                         <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                     </svg>
                     </div>
-                    <input datepicker id="default-datepicker" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                    <input datepicker id="date" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                 </div>
 
                 <form class="w-[8.5rem] mx-auto">
@@ -78,10 +78,11 @@
                 <textarea id="description" name="description" rows="5" class="text-black w-full px-3 py-2 border rounded-lg" placeholder="Enter event details..."></textarea>
                 </div>
         
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+                <button type="submit" id="submit-button" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
             </form>
         </div>
     </div>
+    <script type="module" src="compose.js"></script>
     <script src="../main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   </body>

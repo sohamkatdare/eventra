@@ -1,10 +1,10 @@
 import { signup } from "../auth.js";
 
 const password_1 = document.getElementById("password");
-const password_2 = document.getElementById("confirm_password");
+const password_2 = document.getElementById("confirm-password");
 const error_message = document.getElementById("error");
 
-const signupForm = document.querySelector('#p1Form');
+const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 

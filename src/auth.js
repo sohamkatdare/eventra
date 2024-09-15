@@ -93,4 +93,4 @@ async function continueAsGuest() {
 }
 
 
-export { signup, signupOrg, reset, continueAsGuest };
+export { signup, signupOrg, reset, continueAsGuest, login };

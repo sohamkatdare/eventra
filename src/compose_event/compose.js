@@ -1,21 +1,26 @@
-import { getQueryVariable, setQueryVariable } from "../util";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { db } from "../firebase.js";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase_init.js";
 
-let title, city, country, date, time, description;
+console.log('hello')
 
-composeForm = document.getElementById("compose-form");
+document.getElementById("submit-button").onclick = async (event) => {
+    event.preventDefault();
 
-composeForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // get user info
-    const title = document.getElementById("title").value;
-    const city = document.getElementById("city").value;
-    const country = document.getElementById("country").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-    const description = document.getElementById("description").value;
-
+    console.log("hello")
     
-});
+    try {
+        let docRef = await addDoc(collection(db, "events"), {
+            title: document.getElementById("title").value,
+            city: document.getElementById("city").value,
+            country: document.getElementById("country").value,
+            date: document.getElementById("date").value,
+            time: document.getElementById("time").value,
+            description: document.getElementById("description").value,
+            announcements: [],
+            favCount: 0
+        });
+        window.location.replace("/org_home/");
+    } catch(e) {
+        console.error("Document add threw error:", e);
+    }
+};

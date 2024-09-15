@@ -5,6 +5,7 @@ const password_2 = document.getElementById("confirm-password");
 const error_message = document.getElementById("error");
 console.log('hello')
 
+
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', async (e) => {
     console.log('hello')
