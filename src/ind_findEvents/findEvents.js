@@ -69,7 +69,12 @@ if (locationFilter.value) {
 
 const template = document.getElementById("sample-event")
 
-const querySnapshot = await getDocs(q);
+async function getQuerySnapshot(query) {
+    const querySnapshot = await getDocs(query);
+    return querySnapshot;
+}
+
+qS = getQuerySnapshot(q)
 
 console.log(querySnapshot)
 
