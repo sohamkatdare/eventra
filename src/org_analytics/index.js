@@ -11,9 +11,9 @@ onAuthStateChanged(auth, async (user) => {
     let docSnap = await getDoc(doc(db, 'users', uid));
 
     let orgName = docSnap.data().orgName
+
+    document.getElementById('name').innerHTML = `${orgName}`
   } else {
     window.location.replace("../");
   }
-
-  document.getElementById('name').innerHTML = `${orgName}`
 });

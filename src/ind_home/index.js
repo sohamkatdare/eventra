@@ -14,9 +14,10 @@ onAuthStateChanged(auth, async (user) => {
     let lName = docSnap.data().lastName;
 
     document.getElementById('welcome-message').innerHTML = `Welcome, ${fName}.`;
+
+    document.getElementById('name').innerHTML = `${fName} ${lName}`
+    
   } else {
     window.location.replace("../");
   }
-
-  document.getElementById('name').innerHTML = `${fName} ${lName}`
 });

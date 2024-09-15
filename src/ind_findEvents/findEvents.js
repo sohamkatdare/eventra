@@ -74,11 +74,11 @@ async function getQuerySnapshot(query) {
     return querySnapshot;
 }
 
-qS = getQuerySnapshot(q)
+let qS = await getQuerySnapshot(q)
 
-console.log(querySnapshot)
+console.log(qS)
 
-querySnapshot.forEach((docItem) => {
+qS.forEach((docItem) => {
 
     const clone = template.cloneNode(true);
 

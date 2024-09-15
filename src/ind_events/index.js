@@ -12,9 +12,9 @@ onAuthStateChanged(auth, async (user) => {
 
     let fName = docSnap.data().firstName;
     let lName = docSnap.data().lastName;
+
+    document.getElementById('name').innerHTML = `${fName} ${lName}`
   } else {
     window.location.replace("../");
   }
-
-  document.getElementById('name').innerHTML = `${fName} ${lName}`
 });
