@@ -73,34 +73,29 @@ const template = document.getElementById("sample-event")
 
 async function getQuerySnapshot(query) {
     const querySnapshot = await getDocs(query);
-    return querySnapshot;
+
+    querySnapshot.forEach((docItem) => {
+
+        const clone = template.cloneNode(true);
+    
+        clone.children[0].id = docItem.id;
+    
+        const elements = clone.children[0].children[0].children;
+    
+        elements[0].innerHTML = docItem.data().title
+        elements[1].innerHTML = `<p class="text-black">Date: ${docItem.data().date + ", " + docItem.data().time}</p>`
+        elements[2].innerHTML = docItem.data().city + ', ' + docItem.data().country
+        elements[3].innerHTML = docItem.data().description
+        
+        try {
+            eventsList.innerHTML += clone.innerHTML;
+        } catch (error) {
+            console.error(error)
+        }
+        
+    });
 }
 
-let qS = await getQuerySnapshot(q)
-console.log(qS)
-
-qS.forEach((docItem) => {
-
-    const clone = template.cloneNode(true);
-
-    clone.children[0].id = docItem.id;
-
-    const elements = clone.children[0].children[0].children;
-
-    elements[0].innerHTML = docItem.data().title
-    elements[1].innerHTML = `<p class="text-black">Date: ${docItem.data().date + ", " + docItem.data().time}</p>`
-    elements[2].innerHTML = docItem.data().city + ', ' + docItem.data().country
-    elements[3].innerHTML = docItem.data().description
-    
-    try {
-        eventsList.innerHTML += clone.innerHTML;
-    } catch (error) {
-        console.error(error)
-    }
-    
-});
 
 
-
-
-
+getQuerySnapshot(q)
